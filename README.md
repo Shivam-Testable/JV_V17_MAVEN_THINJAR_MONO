@@ -1,4 +1,4 @@
-﻿# Testable Java — `JV_V17_MAVEN_TP6152_SLIM`
+﻿# Testable Java — `JV_V17_MAVEN_TP6152_SLIM` test
 
 Repository: [Shivam-Testable/JV_V17_MAVEN_THINJAR_MONO](https://github.com/Shivam-Testable/JV_V17_MAVEN_THINJAR_MONO)
 
