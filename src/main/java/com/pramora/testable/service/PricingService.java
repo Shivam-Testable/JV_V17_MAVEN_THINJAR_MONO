@@ -39,6 +39,19 @@ public class PricingService {
         var discount = policy.discountCents(order);
         long net = floorAtZero.applyAsLong(subtotal - discount);
 
+        // TP-5957 probe: five lines the existing tests execute, then three lines
+        // they never reach (line count is never negative). Patch coverage should
+        // land near 5/8, not a raw line count and not 100.
+        long probe = net;
+        probe = probe + order.lineCount();
+        probe = probe - order.lineCount();
+        net = probe;
+        if (order.lineCount() < 0) {
+            net = net + 1L;
+            net = net + 1L;
+            net = net + 1L;
+        }
+
         return net + shippingCents(order, net);
     }
 
